@@ -159,17 +159,38 @@ li,
 tr,
 label,
 button,
-::placeholder {
+figcaption,
+::placeholder,
+input,
+textarea {
   font-size: 2rem;
 }
 /* VARIABLES */
 /* MIXINS */
+/* adjustable flex containers and children */
+/* background settings */
+/* dashed line for section bottoms */
+/* link colors */
+.links {
+  color: black;
+  text-decoration: none;
+}
+/* table setup */
 /* PAGE START */
 .container {
   font-family: "Titillium Web", sans-serif;
   background: white;
+  /* ALL THE LINKS THE SAME  */
   /* HEADER */
   /* MAIN CONTENT */
+  /* FOOTER */
+}
+.container a {
+  color: black;
+  text-decoration: none;
+}
+.container a:hover {
+  color: #23d18b;
 }
 .container header {
   background-image: url("/images/bg4.jpg");
@@ -214,8 +235,6 @@ button,
   }
 }
 .container header nav a {
-  color: black;
-  text-decoration: none;
   margin-right: 30px;
 }
 @media (max-width: 800px) {
@@ -244,6 +263,14 @@ button,
   width: 90%;
   max-width: 1024px;
   margin: 0 auto;
+  /* MARGIN FOR H2 FOR WHOLE MAIN SECTION */
+  /* EVERY SECTION HAS A DASHED LINE ON BOTTOM EXCEPT THE LAST ONE */
+  /* BOTH TABLES WILL BE THE SAME */
+  /* REUSABLE ROW CLASS */
+  /* ABOUT ME SECTION */
+  /* PORTFOLIO */
+  /* CONTACT AREA */
+  /* ADDRESS AND PHONE */
 }
 @media (max-width: 800px) {
   .container main {
@@ -267,25 +294,25 @@ button,
 .container main section:last-child {
   border: none;
 }
-.container main section table {
+.container main table {
   width: 100%;
   text-align: left;
   border-collapse: collapse;
   border: 1px solid #bdbdbd;
 }
 @media (max-width: 500px) {
-  .container main section table .no-mobile {
+  .container main table .no-mobile {
     display: none;
   }
 }
-.container main section table tr {
+.container main table tr {
   width: 100%;
 }
-.container main section table tr:nth-child(even) {
+.container main table tr:nth-child(even) {
   background-color: #bdbdbd;
 }
-.container main section table tr td,
-.container main section table tr th {
+.container main table tr td,
+.container main table tr th {
   padding: 1rem;
   vertical-align: middle;
 }
@@ -295,20 +322,27 @@ button,
   align-items: center;
   flex-wrap: wrap;
 }
-.container main .row div {
+.container main div {
   flex: 0 1 48%;
   text-align: justify;
 }
 @media (max-width: 800px) {
-  .container main .row div {
+  .container main div {
     flex: 0 1 100%;
   }
-  .container main .row div:nth-child(2) {
+  .container main div:nth-child(2) {
     margin-top: 2rem;
   }
 }
-.container main .row div h3 {
+.container main div h3 {
   margin: 1rem 0;
+}
+.container main figure {
+  flex: 0 1 30%;
+  margin: 2rem 0;
+}
+.container main figure img {
+  width: 100%;
 }
 .container main form label,
 .container main form input,
@@ -327,7 +361,7 @@ button,
 .container main form button {
   cursor: pointer;
   border: 1px solid black;
-  background: white;
+  background: #dedede;
   padding: 1rem 2rem;
   margin-top: 1rem;
 }
@@ -349,8 +383,12 @@ button,
   width: 100%;
   padding: 4rem 0;
   background: #dedede;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+}
+.container footer div {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.container footer div i {
+  padding: 0 2rem;
+  font-size: 3rem;
 }

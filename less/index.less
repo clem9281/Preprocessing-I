@@ -165,7 +165,10 @@ li,
 tr,
 label,
 button,
-::placeholder {
+figcaption,
+::placeholder,
+input,
+textarea {
   font-size: 2rem;
 }
 
@@ -173,12 +176,18 @@ button,
 @header-bg: url("/images/bg4.jpg");
 @mobile: 500px;
 @tablet: 800px;
-@main-font: "Titillium Web", sans-serif
+@main-font: "Titillium Web", sans-serif;
 @bg-grey: #dedede;
 @table-grey: #bdbdbd;
+@neutral: grey;
+@dark: black;
+@light: white;
+@translucent: rgba(255, 255, 255, 0.5);
+@bright: #23d18b;
 
 /* MIXINS */
 
+/* adjustable flex containers and children */
 .custom-flex-container(@justify, @align, @wrap) {
   display: flex;
   justify-content: @justify;
@@ -190,6 +199,7 @@ button,
   flex: 0 1 @width;
 }
 
+/* background settings */
 .custom-background() {
   background-size: cover;
   background-position: center;
@@ -197,11 +207,19 @@ button,
   background-attachment: fixed;
 }
 
+/* dashed line for section bottoms */
 .custom-line() {
   padding-bottom: 4rem;
-  border-bottom: 1px dashed grey;
+  border-bottom: 1px dashed @neutral;
 }
 
+/* link colors */
+.links {
+  color: @dark;
+  text-decoration: none;
+}
+
+/* table setup */
 .custom-table() {
   width: 100%;
   text-align: left;
@@ -226,10 +244,22 @@ button,
 }
 
 /* PAGE START */
+
 .container {
   font-family: @main-font;
-  background: white;
+  background: @light;
+
+  /* ALL THE LINKS THE SAME  */
+
+  a {
+    .links();
+    &:hover {
+      color: @bright;
+    }
+  }
+
   /* HEADER */
+
   header {
     background-image: @header-bg;
     .custom-background();
@@ -239,7 +269,9 @@ button,
     @media (max-width: @tablet) {
       .custom-flex-container(center, center, wrap);
     }
+
     /* HEADER NAVIGATION */
+
     nav {
       background: @bg-grey;
       position: fixed;
@@ -251,22 +283,22 @@ button,
         .custom-flex-container(space-around, center, wrap);
       }
       a {
-        color: black;
-        text-decoration: none;
         margin-right: 30px;
         @media (max-width: @tablet) {
           margin-right: 0;
         }
       }
     }
+
     /* HEADER TEXT */
+
     div {
       .custom-flex-child(45%);
-      border-right: 1px solid grey;
+      border-right: 1px solid @neutral;
       @media (max-width: @tablet) {
         .custom-flex-child(90%);
         border-right: none;
-        background: rgba(255, 255, 255, 0.5);
+        background: @translucent;
       }
       h1 {
         margin: 4rem;
@@ -290,40 +322,63 @@ button,
     @media (max-width: @mobile) {
       min-width: 90%;
       max-width: @mobile - 40px;
-	}
-	/* MARGIN FOR H2 FOR WHOLE MAIN SECTION */
+    }
+
+    /* MARGIN FOR H2 FOR WHOLE MAIN SECTION */
+
     h2 {
       margin: 4rem 0 2rem;
-	}
-	/* EVERY SECTION HAS A DASHED LINE ON BOTTOM EXCEPT THE LAST ONE */
+    }
+
+    /* EVERY SECTION HAS A DASHED LINE ON BOTTOM EXCEPT THE LAST ONE */
+
     section {
       .custom-line();
       &:last-child {
         border: none;
-	  }
-	  /* BOTH TABLES WILL BE THE SAME */
-      table {
-        .custom-table();
       }
-	}
-	/* ABOUT ME SECTION */
+    }
+
+    /* BOTH TABLES WILL BE THE SAME */
+
+    table {
+      .custom-table();
+    }
+
+    /* REUSABLE ROW CLASS */
+
     .row {
       .custom-flex-container(space-between, center, wrap);
-      div {
-        .custom-flex-child(48%);
-        text-align: justify;
-        @media (max-width: @tablet) {
-          .custom-flex-child(100%);
-          &:nth-child(2) {
-            margin-top: 2rem;
-          }
-        }
-        h3 {
-          margin: 1rem 0;
+    }
+
+    /* ABOUT ME SECTION */
+
+    div {
+      .custom-flex-child(48%);
+      text-align: justify;
+      @media (max-width: @tablet) {
+        .custom-flex-child(100%);
+        &:nth-child(2) {
+          margin-top: 2rem;
         }
       }
-	}
-	/* CONTACT AREA */
+      h3 {
+        margin: 1rem 0;
+      }
+    }
+
+    /* PORTFOLIO */
+
+    figure {
+      .custom-flex-child(30%);
+      margin: 2rem 0;
+      img {
+        width: 100%;
+      }
+    }
+
+    /* CONTACT AREA */
+
     form {
       label,
       input,
@@ -337,17 +392,19 @@ button,
       textarea,
       input {
         padding: 1rem 0.5rem;
-        border: 1px solid black;
+        border: 1px solid @dark;
       }
       button {
         cursor: pointer;
-        border: 1px solid black;
-        background: white;
+        border: 1px solid @dark;
+        background: @bg-grey;
         padding: 1rem 2rem;
         margin-top: 1rem;
       }
-	}
-	/* ADDRESS AND PHONE */
+    }
+
+    /* ADDRESS AND PHONE */
+
     address {
       margin-top: 4rem;
       h3 {
@@ -363,11 +420,20 @@ button,
       }
     }
   }
+
   /* FOOTER */
+
   footer {
     width: 100%;
     padding: 4rem 0;
     background: @bg-grey;
-    .custom-flex-container(center, center, wrap);
+    div {
+      text-align: center;
+      margin-bottom: 2rem;
+      i {
+        padding: 0 2rem;
+        font-size: 3rem;
+      }
+    }
   }
 }
