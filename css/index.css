@@ -341,6 +341,11 @@ textarea {
   flex: 0 1 30%;
   margin: 2rem 0;
 }
+@media (max-width: 500px) {
+  .container main figure {
+    flex: 0 1 100%;
+  }
+}
 .container main figure img {
   width: 100%;
 }

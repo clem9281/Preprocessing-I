@@ -371,6 +371,9 @@ textarea {
 
     figure {
       .custom-flex-child(30%);
+      @media (max-width: @mobile) {
+        .custom-flex-child(100%);
+      }
       margin: 2rem 0;
       img {
         width: 100%;
