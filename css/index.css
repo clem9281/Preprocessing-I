@@ -146,18 +146,30 @@ h2 {
   font-size: 3rem;
 }
 h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+}
+h1,
+h2,
+h3 {
+  font-weight: bold;
 }
 p,
 a,
-li {
-  font-size: 1.6rem;
+li,
+tr,
+label,
+button,
+::placeholder {
+  font-size: 2rem;
 }
 /* VARIABLES */
 /* MIXINS */
 /* PAGE START */
 .container {
-  height: 100%;
+  font-family: "Titillium Web", sans-serif;
+  background: white;
+  /* HEADER */
+  /* MAIN CONTENT */
 }
 .container header {
   background-image: url("/images/bg4.jpg");
@@ -171,6 +183,8 @@ li {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  /* HEADER NAVIGATION */
+  /* HEADER TEXT */
 }
 @media (max-width: 800px) {
   .container header {
@@ -181,6 +195,7 @@ li {
   }
 }
 .container header nav {
+  background: #dedede;
   position: fixed;
   align-self: flex-start;
   height: 7rem;
@@ -210,7 +225,7 @@ li {
 }
 .container header div {
   flex: 0 1 45%;
-  border-right: 1px solid black;
+  border-right: 1px solid grey;
 }
 @media (max-width: 800px) {
   .container header div {
@@ -224,5 +239,118 @@ li {
 }
 .container header div p {
   margin: 4rem;
-  font-size: 2rem;
+}
+.container main {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .container main {
+    width: 90%;
+    max-width: 480px;
+  }
+}
+@media (max-width: 500px) {
+  .container main {
+    min-width: 90%;
+    max-width: 460px;
+  }
+}
+.container main h2 {
+  margin: 4rem 0 2rem;
+}
+.container main section {
+  padding-bottom: 4rem;
+  border-bottom: 1px dashed grey;
+}
+.container main section:last-child {
+  border: none;
+}
+.container main section table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  border: 1px solid #bdbdbd;
+}
+@media (max-width: 500px) {
+  .container main section table .no-mobile {
+    display: none;
+  }
+}
+.container main section table tr {
+  width: 100%;
+}
+.container main section table tr:nth-child(even) {
+  background-color: #bdbdbd;
+}
+.container main section table tr td,
+.container main section table tr th {
+  padding: 1rem;
+  vertical-align: middle;
+}
+.container main .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container main .row div {
+  flex: 0 1 48%;
+  text-align: justify;
+}
+@media (max-width: 800px) {
+  .container main .row div {
+    flex: 0 1 100%;
+  }
+  .container main .row div:nth-child(2) {
+    margin-top: 2rem;
+  }
+}
+.container main .row div h3 {
+  margin: 1rem 0;
+}
+.container main form label,
+.container main form input,
+.container main form textarea {
+  width: 100%;
+}
+.container main form label {
+  display: inline-block;
+  margin: 1.5rem 0 1rem;
+}
+.container main form textarea,
+.container main form input {
+  padding: 1rem 0.5rem;
+  border: 1px solid black;
+}
+.container main form button {
+  cursor: pointer;
+  border: 1px solid black;
+  background: white;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+}
+.container main address {
+  margin-top: 4rem;
+}
+.container main address h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.container main address p {
+  font-style: italic;
+}
+.container main address p:nth-child(4) {
+  padding-top: 1rem;
+  font-style: normal;
+}
+.container footer {
+  width: 100%;
+  padding: 4rem 0;
+  background: #dedede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
