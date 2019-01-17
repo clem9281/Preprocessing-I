@@ -1,1 +1,399 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+html body {
+  height: 100%;
+}
+/* GENERAL STYLES */
+/* TYPOGRAPHY */
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2.5rem;
+}
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+p,
+a,
+li,
+tr,
+label,
+button,
+figcaption,
+::placeholder,
+input,
+textarea {
+  font-size: 2rem;
+}
+/* VARIABLES */
+/* MIXINS */
+/* adjustable flex containers and children */
+/* background settings */
+/* dashed line for section bottoms */
+/* link colors */
+.links {
+  color: black;
+  text-decoration: none;
+}
+/* table setup */
+/* PAGE START */
+.container {
+  font-family: "Titillium Web", sans-serif;
+  background: white;
+  /* ALL THE LINKS THE SAME  */
+  /* HEADER */
+  /* MAIN CONTENT */
+  /* FOOTER */
+}
+.container a {
+  color: black;
+  text-decoration: none;
+}
+.container a:hover {
+  color: #23d18b;
+}
+.container header {
+  background-image: url("/images/bg4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  /* HEADER NAVIGATION */
+  /* HEADER TEXT */
+}
+@media (max-width: 800px) {
+  .container header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.container header nav {
+  background: #dedede;
+  position: fixed;
+  align-self: flex-start;
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 800px) {
+  .container header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.container header nav a {
+  margin-right: 30px;
+}
+@media (max-width: 800px) {
+  .container header nav a {
+    margin-right: 0;
+  }
+}
+.container header div {
+  flex: 0 1 45%;
+  border-right: 1px solid grey;
+}
+@media (max-width: 800px) {
+  .container header div {
+    flex: 0 1 90%;
+    border-right: none;
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+.container header div h1 {
+  margin: 4rem;
+}
+.container header div p {
+  margin: 4rem;
+}
+.container main {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+  /* MARGIN FOR H2 FOR WHOLE MAIN SECTION */
+  /* EVERY SECTION HAS A DASHED LINE ON BOTTOM EXCEPT THE LAST ONE */
+  /* BOTH TABLES WILL BE THE SAME */
+  /* REUSABLE ROW CLASS */
+  /* ABOUT ME SECTION */
+  /* PORTFOLIO */
+  /* CONTACT AREA */
+  /* ADDRESS AND PHONE */
+}
+@media (max-width: 800px) {
+  .container main {
+    width: 90%;
+    max-width: 480px;
+  }
+}
+@media (max-width: 500px) {
+  .container main {
+    min-width: 90%;
+    max-width: 460px;
+  }
+}
+.container main h2 {
+  margin: 4rem 0 2rem;
+}
+.container main section {
+  padding-bottom: 4rem;
+  border-bottom: 1px dashed grey;
+}
+.container main section:last-child {
+  border: none;
+}
+.container main table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  border: 1px solid #bdbdbd;
+}
+@media (max-width: 500px) {
+  .container main table .no-mobile {
+    display: none;
+  }
+}
+.container main table tr {
+  width: 100%;
+}
+.container main table tr:nth-child(even) {
+  background-color: #bdbdbd;
+}
+.container main table tr td,
+.container main table tr th {
+  padding: 1rem;
+  vertical-align: middle;
+}
+.container main .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container main div {
+  flex: 0 1 48%;
+  text-align: justify;
+}
+@media (max-width: 800px) {
+  .container main div {
+    flex: 0 1 100%;
+  }
+  .container main div:nth-child(2) {
+    margin-top: 2rem;
+  }
+}
+.container main div h3 {
+  margin: 1rem 0;
+}
+.container main figure {
+  flex: 0 1 30%;
+  margin: 2rem 0;
+}
+@media (max-width: 500px) {
+  .container main figure {
+    flex: 0 1 100%;
+  }
+}
+.container main figure img {
+  width: 100%;
+}
+.container main form label,
+.container main form input,
+.container main form textarea {
+  width: 100%;
+}
+.container main form label {
+  display: inline-block;
+  margin: 1.5rem 0 1rem;
+}
+.container main form textarea,
+.container main form input {
+  padding: 1rem 0.5rem;
+  border: 1px solid black;
+}
+.container main form button {
+  cursor: pointer;
+  border: 1px solid black;
+  background: #dedede;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+}
+.container main address {
+  margin-top: 4rem;
+}
+.container main address h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.container main address p {
+  font-style: italic;
+}
+.container main address p:nth-child(4) {
+  padding-top: 1rem;
+  font-style: normal;
+}
+.container footer {
+  width: 100%;
+  padding: 4rem 0;
+  background: #dedede;
+}
+.container footer div {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.container footer div i {
+  padding: 0 2rem;
+  font-size: 3rem;
+}
